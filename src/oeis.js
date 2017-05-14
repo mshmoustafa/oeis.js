@@ -27,7 +27,7 @@ OEIS.language = "english";
 // Searches the OEIS by the sequence's ID (e.g. A000045)
 // id: The ID of the sequence. Must be a string: preceded by an 'A' and have six digits OR preceded by an 'M' or 'N' and have four digits. Note that if the ID is not in the correct format, OEIS will treat it as a general search query and may return more than one result. Examples: "A000045", "M0692", "N0256"
 // format: "json" or "text"
-// callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json", data if the format specified was "png", or text otherwise.
+// callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json" or text otherwise.
 OEIS.searchByID = function (id, format, callback) {
     if (!format) {
         format = "html";
