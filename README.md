@@ -41,6 +41,12 @@ The OEIS can also be searched by a more general search term, as you might do if 
 
 Note that the quotes around `symmetric group` have to be escaped since they are part of the search query. `OEIS.searchByQuery` will encode the query string as a URI, so there is no need for you to do that before calling it.
 
+### Example 4 - Get a Sequence's Graph
+
+You can get a graph of the terms in a sequence by doing:
+
+`OEIS.getGraphForSequenceID("A000045", "png", myFunction)`
+
 ## Note on CORS
 
 It appears that the OEIS does not have their server set up to allow cross-origin XMLHttpRequests, meaning that this code will not work within browsers unless they are specifically configured to allow cross-origin XMLHttpRequests.  While you can adjust your own browser so that it does not check the server's policies on cross-origin requests, this code generally will not work on default browser settings.  I've included a workaround by routing the requests through http://crossorigin.me.  This is a less-than-ideal solution which will be removed once the code is more stable, but in the meantime, please don't abuse crossorigin.me or OEIS by flooding them with requests with this code. Actually, please don't abuse either site at any time by flooding them with requests regardless of the functionality of this code.
