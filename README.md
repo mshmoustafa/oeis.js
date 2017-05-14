@@ -17,17 +17,23 @@ Feel free to clone the whole repository if you want to run the tests, which are 
 
 This section is meant to get you using `oeis.js` quickly. For more comprehensive documentation on how to use `oeis.js`, please refer to the comments in the source file.
 
+### Example 1
+
 `oeis.js` contains the singleton `OEIS`, which you can use to interact with the OEIS.  For example, to get the Fibonacci numbers (which has ID A000045), do:
 
 `OEIS.searchByID("A000045", "json", console.log)`
 
 The preceding function call specifies the sequence ID (A000045), the format that the results should be in (JSON), and a callback that should be called with the resulting data (console.log).
 
+### Example 2
+
 To search the OEIS for a series of terms - for example, `1,1,2,3,5`, do:
 
 `OEIS.searchByTerms([1,1,2,3,5], "text", myFunction)`
 
 This time, we searched the OEIS by an array of terms, specified the format to be OEIS's internal text format, and gave myFunction as the callback.
+
+### Example 3
 
 The OEIS can also be searched by a more general search term, as you might do if you were using the OEIS website. If you wanted to search for `2,3,6,16 "symmetric group" author:Stanley`, do:
 
