@@ -10,4 +10,4 @@ Thumbs.db
 
 # VIM autosave files #
 ######################
-.swp
+*.swp

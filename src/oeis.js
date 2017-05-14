@@ -1,3 +1,17 @@
+// OEIS is a singleton object that provides convenient functions for performing requests to the OEIS database.
+// Properties:
+//   proxy
+//   endpoint
+//   lastRequest
+//   language
+// Functions:
+//   searchByID(id, format, callback)
+//   searchByTerms(terms, format, callback)
+//   searchByTermsAndStart(terms, start, format, callback)
+//   searchByQuery(queryString, format, callback)
+//   getGraphForSequenceID(id, format, callback)
+//   createCORSRequest(method, url)
+//   doRequest(URL, format, callback)
 var OEIS = new Object();
 
 // OEIS.proxy is a hack to get around browsers' CORS security functionality. This will be removed once most of the class's functionality is implemented and tested.
