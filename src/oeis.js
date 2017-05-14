@@ -9,9 +9,11 @@
 //   searchByTerms(terms, format, callback)
 //   searchByTermsAndStart(terms, start, format, callback)
 //   searchByQuery(queryString, format, callback)
+//   searchByQueryAndStart(queryString, start, format, callback)
 //   getGraphForSequenceID(id, format, callback)
 //   createCORSRequest(method, url)
 //   doRequest(URL, format, callback)
+
 var OEIS = new Object();
 
 // OEIS.proxy is a hack to get around browsers' CORS security functionality. This will be removed once most of the class's functionality is implemented and tested.
@@ -55,15 +57,24 @@ OEIS.searchByTermsAndStart = function (terms, start, format, callback) {
     OEIS.doRequest(URL, format, callback);
 }
 
-// Searches the OEIS by a query string (e.g. '2,3,6,16 "symmetric group" author:Stanley')
+// Searches the OEIS by a query string (e.g. '2,3,6,16 "symmetric group" author:Stanley') and start=0
 // queryString: A string consisting of a query similar to what one might type in the search bar on the OEIS website. This string will be URI encoded before the request is sent, so the string really should be as one would type on the website. Example: '2,3,6,16 "symmetric group" author:Stanley'
 // format: "json" or "text"
 // callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json" or text otherwise.
 OEIS.searchByQuery = function (queryString, format, callback) {
+    OEIS.searchByQueryAndStart(queryString, 0, format, callback);
+};
+
+// Searches the OEIS by a query string (e.g. '2,3,6,16 "symmetric group" author:Stanley') and a start
+// queryString: A string consisting of a query similar to what one might type in the search bar on the OEIS website. This string will be URI encoded before the request is sent, so the string really should be as one would type on the website. Example: '2,3,6,16 "symmetric group" author:Stanley'
+// start: OEIS returns at most 10 results at a time, so start is used to adjust which results are retrieved. Example: start=0 gets the first 10 search results, start=10 will get the next 10 search results, etc.
+// format: "json" or "text"
+// callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json" or text otherwise.
+OEIS.searchByQueryAndStart = function (queryString, start, format, callback) {
     if (!format) {
         format = "html";
     }
-    URL = OEIS.endpoint + "search?" + "language=" + OEIS.language + "&" + "q=" + encodeURIComponent(queryString)+ "&" + "fmt=" + format;
+    URL = OEIS.endpoint + "search?" + "language=" + OEIS.language + "&" + "q=" + encodeURIComponent(queryString)+ "&" + "fmt=" + format + "&" + "start=" + start;
     OEIS.doRequest(URL, format, callback);
 };
 
