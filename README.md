@@ -3,11 +3,11 @@
 
 oeis.js contains a single object, `OEIS`, that has a set of properties and functions for querying the OEIS.
 
-*The code has many helpful comments on how to use it in detail. Please read them when you need more documentation beyond this basic readme.*
+**The [source file](https://github.com/mshmoustafa/oeis.js/blob/master/src/oeis.js) has many helpful comments on how to use it in detail. Please read them when you need more documentation beyond this basic readme.**
 
 ## Installation
 
-All of the code is contained within the `oeis.js` source file, located in `src/oeis.js`.  So to use `oeis.js` in your project, simply download the `oeis.js` source file and include it in your HTML like this:
+All of the code is contained within the `oeis.js` source file, located in [`src/oeis.js`](https://github.com/mshmoustafa/oeis.js/blob/master/src/oeis.js).  So to use `oeis.js` in your project, simply download the `oeis.js` source file and include it in your HTML like this:
 
 `<script src="oeis.js"></script>`.
 
@@ -49,6 +49,6 @@ You can get a graph of the terms in a sequence by doing:
 
 ## Note on CORS
 
-It appears that the OEIS does not have their server set up to allow cross-origin XMLHttpRequests, meaning that this code will not work within browsers unless they are specifically configured to allow cross-origin XMLHttpRequests.  While you can adjust your own browser so that it does not check the server's policies on cross-origin requests, this code generally will not work on default browser settings.  I've included a workaround by routing the requests through http://crossorigin.me.  This is a less-than-ideal solution which will be removed once the code is more stable, but in the meantime, please don't abuse crossorigin.me or OEIS by flooding them with requests with this code. Actually, please don't abuse either site at any time by flooding them with requests regardless of the functionality of this code.
+It appears that the OEIS does not have their server set up to allow cross-origin XMLHttpRequests, meaning that **this code will not work within browsers unless they are specifically configured to allow cross-origin XMLHttpRequests**.  While you can adjust your own browser so that it does not check the server's policies on cross-origin requests, this code generally will not work on default browser settings.  I've included a workaround by routing the requests through http://crossorigin.me.  This is a less-than-ideal solution which will be removed once the code is more stable, but in the meantime, please don't abuse crossorigin.me or OEIS by flooding them with requests with this code. Actually, please don't abuse either site at any time by flooding them with requests regardless of the functionality of this code.
 
-This code should work in environments that do not check cross-origin policies, such as Phonegap and properly configured browsers, but I have not tested any of them yet.
+This code *should* work in environments that do not check cross-origin policies, such as Phonegap and properly configured browsers, but I have not tested any of them yet.
