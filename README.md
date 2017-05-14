@@ -1,5 +1,5 @@
 # oeis.js
-## A Javascript object for interacting with the OEIS ([OEIS.org](OEIS.org))
+## A Javascript object for interacting with the On-Line Encyclopedia of Integer Sequences ([OEIS.org](OEIS.org))
 
 oeis.js contains a single object, `OEIS`, that has a set of properties and functions for querying the OEIS.
 
