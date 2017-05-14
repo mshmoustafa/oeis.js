@@ -41,7 +41,7 @@ OEIS.searchByID = function (id, format, callback) {
 // format: "json" or "text"
 // callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json" or text otherwise.
 OEIS.searchByTerms = function (terms, format, callback) {
-    OEIS.searchByTermsAndStart(terms, start=0, format, callback);
+    OEIS.searchByTermsAndStart(terms, 0, format, callback);
 }
 
 // Searches the OEIS by terms in a sequence (e.g. 1,1,2,3,5) and a start.
