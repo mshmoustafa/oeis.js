@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+
+<head>
+<title>Test OEIS.js</title>
+<meta charset="utf-8" />
+</head>
+
+<body>
+</body>
+
+<script src="../src/oeis.js"></script>
+<script>
+console.log("testing oeis.js");
+console.log(OEIS);
+
+var parseAndPrint = function (jsonText) {
+    var jsonObj = JSON.parse(jsonText);
+    console.log(jsonObj);
+};
+
+OEIS.searchByID("000045", "json", parseAndPrint);
+OEIS.searchByTerms([1,1,2,3,5], "json", parseAndPrint);
+</script>
+
+</html>
