@@ -14,6 +14,9 @@ OEIS.searchByTerms = function (terms, format, callback) {
     OEIS.doRequest(URL, callback);
 }
 
+// Based heavily on code found on www.html5rocks.com by
+// Monsur Hossain.
+// https://www.html5rocks.com/en/tutorials/cors/
 OEIS.createCORSRequest = function (method, url) {
     var xhr = new XMLHttpRequest();
     if ("withCredentials" in xhr) {
