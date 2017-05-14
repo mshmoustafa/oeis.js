@@ -1,5 +1,6 @@
 var OEIS = new Object();
 
+// OEIS.proxy is a hack to get around browsers' CORS security functionality. This will be removed once most of the class's functionality is implemented and tested.
 OEIS.proxy = "http://crossorigin.me/";
 OEIS.endpoint = OEIS.proxy + "http://oeis.org/";
 OEIS.lastRequest = "";
