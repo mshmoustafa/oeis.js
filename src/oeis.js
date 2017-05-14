@@ -13,6 +13,9 @@ OEIS.language = "english";
 // format: "json" or "text"
 // callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json" or text otherwise.
 OEIS.searchByID = function (id, format, callback) {
+    if (!format) {
+        format = "html";
+    }
     URL = OEIS.endpoint + "search?" + "language=" + OEIS.language + "&" + "q=" + "id:" + id + "&" + "fmt=" + format;
     OEIS.doRequest(URL, format, callback);
 };
@@ -31,6 +34,9 @@ OEIS.searchByTerms = function (terms, format, callback) {
 // format: "json" or "text"
 // callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json" or text otherwise.
 OEIS.searchByTermsAndStart = function (terms, start, format, callback) {
+    if (!format) {
+        format = "html";
+    }
     URL = OEIS.endpoint + "search?" + "language=" + OEIS.language + "&" + "q=" + terms.toString() + "&" + "fmt=" + format + "&" + "start=" + start;
     OEIS.doRequest(URL, format, callback);
 }
@@ -40,6 +46,9 @@ OEIS.searchByTermsAndStart = function (terms, start, format, callback) {
 // format: "json" or "text"
 // callback: a function that is called with the search results passed as an argument. The argument is either a JavaScript object if the format specified was "json" or text otherwise.
 OEIS.searchByQuery = function (queryString, format, callback) {
+    if (!format) {
+        format = "html";
+    }
     URL = OEIS.endpoint + "search?" + "language=" + OEIS.language + "&" + "q=" + encodeURIComponent(queryString)+ "&" + "fmt=" + format;
     OEIS.doRequest(URL, format, callback);
 };
@@ -49,6 +58,9 @@ OEIS.searchByQuery = function (queryString, format, callback) {
 // format: "png"
 // callback: a function that is called with the search results passed as an argument. The argument is returned as data since the format is PNG.
 OEIS.getGraphForSequenceID = function (id, format, callback) {
+    if (!format) {
+        format = "png";
+    }
     URL = OEIS.endpoint + id + "/graph?png=1";
     OEIS.doRequest(URL, format, callback);
 }
