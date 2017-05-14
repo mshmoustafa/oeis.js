@@ -15,13 +15,16 @@
 console.log("testing oeis.js");
 console.log(OEIS);
 
+// Silly test function
 var parseAndPrint = function (jsonText) {
     var jsonObj = JSON.parse(jsonText);
     console.log(jsonObj);
 };
 
-OEIS.searchByID("000045", "json", parseAndPrint);
-OEIS.searchByTerms([1,1,2,3,5], "json", parseAndPrint);
+OEIS.searchByID("A000045", "json", console.log);
+OEIS.searchByTerms([1,1,2,3,5], "json", console.log);
+//OEIS.getGraphForSequenceID("A000045", console.log);
+OEIS.searchByQuery("2,3,6,16 \"symmetric group\" author:Stanley", "json", console.log);
 </script>
 
 </html>
