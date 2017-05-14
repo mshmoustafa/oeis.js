@@ -81,7 +81,7 @@ OEIS.searchByQueryAndStart = function (queryString, start, format, callback) {
 // Retrieves the graph for a sequence by the sequence's ID.
 // id: A string containing the ID of the sequence. Example: "A000045".
 // format: "png"
-// callback: a function that is called with the search results passed as an argument. The argument is returned as data since the format is PNG.
+// callback: a function that is called with the data passed as an argument. The argument is returned as data since the format is PNG.
 OEIS.getGraphForSequenceID = function (id, format, callback) {
     if (!format) {
         format = "png";
